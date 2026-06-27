@@ -65,3 +65,42 @@ AnyRun is needed so i can download the malware sample, which is deerstealer malw
 So, instead of running deerstealer, i tried to make alert for running cipher.exe. Cipher.exe is a legitimate Windows utility used for managing encryption on NTFS volumes. However, it can also be exploited by attackers to perform malicious activities, such as encrypting files for ransomware attacks. By creating an alert for the execution of cipher.exe, I can monitor and detect any suspicious usage of this utility, which may indicate potential security threats or unauthorized actions on the system. In the process of creating the rule, I realize that process creation or event ID 1 is not being included in the whitelist of sysmon config, so i need to add it in manually. Previously, only event ID 10 is being logged for cipher.exe in which powershell is calling cipher.exe. AFter fixing this, now i can see the alert for cipher.exe from event ID 1, which is the process creation event. Why monitoring for event ID 1 is better than event ID 10 is because event ID 1 is the first event that occurs when a process is created, while event ID 10 is generated later in the process lifecycle. By monitoring for event ID 1, I can detect the execution of cipher.exe as soon as it starts, allowing for quicker response and mitigation of potential threats. Meanwhile, if i only monitor event ID 10, i might miss the initial execution of cipher.exe, which could delay detection and response to malicious activity. Also, there might be multiple event ID 10 for the same process, which can lead to confusion and make it harder to identify the actual threat.
 
 i use .\sysmon64.exe -c sysmoncconfig.xml to update the sysmon config. The -c option specifies the configuration file to be used, allowing me to apply the new settings defined in sysmonconfig.xml. This command updates the existing sysmon configuration with the rules and parameters specified in the provided XML file.
+
+Next, i learned about FIM (File Integrity Monitoring). Basically, it checks if a file has been modified or not by tracking the checksums of the files. If the checksum changes, it means the file has been modified. This is useful for detecting unauthorized changes to critical system files, configuration files, or other important data. FIM can help identify potential security breaches, malware infections, or accidental modifications that could compromise the integrity of the system. By monitoring file integrity, organizations can ensure that their systems remain secure and compliant with security policies and regulations.
+
+to do this, i need to modify agent.conf file in wazuh. I used this on os Linux and configured yes on check_all and realtime. Realtime means the alert will come immediately after the file is modified, while check_all means it will check every attribute of the files, like check_sum, check_size, check_owner, check_perm, etc. This ensures that any changes to the monitored files are detected and reported promptly, allowing for timely investigation and response to potential security incidents. For the address, it needs to be absolute path, to get the ~ mean i need to echo $HOME.
+
+Next, for virustotal integration, i need to use virustotal api key and chagne it on ossec.conf on the wazuh server (BTW docker has the conf file on the docker conf folder, not on var folder of the host). The key will be added to the ossec.conf file in the manager. THis means if there are file changes in the FIM, then the wazuh manager will send the file to virustotal for scanning. If virustotal returns a positive result, then the wazuh manager will generate an alert. This integration allows for automated malware detection and enhances the overall security monitoring capabilities of the Wazuh platform. Because i used docker, then the wazuh_manager.conf file needs to be changed, then after that docker-compose down and up again to apply the changes. No need to systemctl restart wazuh-manager because the docker-compose down and up will restart the wazuh manager container.
+
+to enable active response, i need to install jq library in the wazuh agent. jq library is used to process JSON data from wazuh then implement automated response actions. Also, i just realized that its better to ssh to the ubuntu server vm rather than installing guest additions (which idk the manual). Here's the step to enable ssh in the vm:
+sudo apt install -y openssh-server
+sudo systemctl enable --now ssh
+sudo ss -tlnp | grep :22
+ip -4 addr show | grep inet
+
+ALso the vm must use bridged adapter, not NAT, so that the vm can be accessed from the host machine. SO the different modes of network in virtualbox are:
+
+- NAT (Network Address Translation): The VM shares the host's IP address and can access external networks, but it is not directly accessible from the host or other devices on the network.
+- nat network: Similar to NAT, but allows multiple VMs to communicate with each other within a private network while still sharing the host's IP address for external access.
+- bridged adapter: The VM is connected directly to the physical network, allowing it to have its own IP address and be accessible from other devices on the same network, including the host machine.
+- internal network: The VM can communicate only with other VMs on the same internal network, but it cannot access external networks or the host machine.
+- host-only adapter: The VM can communicate only with the host machine and other VMs configured with the same host-only network, but it cannot access external networks.
+- generic driver: This option allows for the use of third-party network drivers, which may provide additional features or compatibility with specific network configurations.
+
+Also edit the docker wazuh manager conf file again:
+<command>
+<name>remove-threat</name>
+<executable>remove-threat.sh</executable>
+<timeout_allowed>no</timeout_allowed>
+</command>
+
+  <active-response>
+    <disabled>no</disabled>
+    <command>remove-threat</command>
+    <location>local</location>
+    <rules_id>87105</rules_id>
+  </active-response>
+
+chown is used to change the ownership of the file. In this case, i need to change the ownership of remove-threat.sh to root user and root group. This is important for security reasons, as it ensures that only authorized users have access to the script and can execute it. By setting the correct ownership, I can prevent unauthorized modifications or execution of the script, which could potentially compromise the security of the system. The command used is:
+
+chmod to 750 for the remove-threat.sh file is used to set the file permissions, allowing the owner (root) to read, write, and execute the script, while the group (root) can read and execute it, and others have no permissions. This permission setting ensures that only authorized users can access and execute the script, enhancing the security of the system. Aside from 750, there is also 755, which allows the owner to read, write, and execute the script, while the group and others can read and execute it.

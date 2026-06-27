@@ -4,3 +4,5 @@ https://wazuh.com/blog/emulation-of-attck-techniques-and-detection-with-wazuh/
 https://wazuh.com/blog/using-wazuh-to-monitor-sysmon-events/
 https://wazuh.com/blog/detecting-deerstealer-malware-with-wazuh/
 https://any.run/malware-trends/deerstealer/
+https://documentation.wazuh.com/current/user-manual/capabilities/malware-detection/virus-total-integration.html
+https://documentation.wazuh.com/current/proof-of-concept-guide/detect-remove-malware-virustotal.html
