@@ -2,6 +2,6 @@
     <rule id="119999" level="13">
         <if_sid>61612</if_sid>
         <field name="win.eventdata.targetImage" type="pcre2">cipher.exe</field>
-        <description>Possible cipher.exe execution detected</description>
+        <description>Possible cipher.exe execution detected (Event ID 10)</description>
     </rule>
 </group>
