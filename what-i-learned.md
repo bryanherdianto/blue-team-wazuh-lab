@@ -66,7 +66,7 @@ So, instead of running deerstealer, i tried to make alert for running cipher.exe
 
 i use .\sysmon64.exe -c sysmoncconfig.xml to update the sysmon config. The -c option specifies the configuration file to be used, allowing me to apply the new settings defined in sysmonconfig.xml. This command updates the existing sysmon configuration with the rules and parameters specified in the provided XML file.
 
-Next, i learned about FIM (File Integrity Monitoring). Basically, it checks if a file has been modified or not by tracking the checksums of the files. If the checksum changes, it means the file has been modified. This is useful for detecting unauthorized changes to critical system files, configuration files, or other important data. FIM can help identify potential security breaches, malware infections, or accidental modifications that could compromise the integrity of the system. By monitoring file integrity, organizations can ensure that their systems remain secure and compliant with security policies and regulations.
+Next, i learned about FIM (File Integrity Monitoring). I DID THIS ON MY UBUNTU VM. Basically, it checks if a file has been modified or not by tracking the checksums of the files. If the checksum changes, it means the file has been modified. This is useful for detecting unauthorized changes to critical system files, configuration files, or other important data. FIM can help identify potential security breaches, malware infections, or accidental modifications that could compromise the integrity of the system. By monitoring file integrity, organizations can ensure that their systems remain secure and compliant with security policies and regulations.
 
 to do this, i need to modify agent.conf file in wazuh. I used this on os Linux and configured yes on check_all and realtime. Realtime means the alert will come immediately after the file is modified, while check_all means it will check every attribute of the files, like check_sum, check_size, check_owner, check_perm, etc. This ensures that any changes to the monitored files are detected and reported promptly, allowing for timely investigation and response to potential security incidents. For the address, it needs to be absolute path, to get the ~ mean i need to echo $HOME.
 
@@ -104,3 +104,61 @@ Also edit the docker wazuh manager conf file again:
 chown is used to change the ownership of the file. In this case, i need to change the ownership of remove-threat.sh to root user and root group. This is important for security reasons, as it ensures that only authorized users have access to the script and can execute it. By setting the correct ownership, I can prevent unauthorized modifications or execution of the script, which could potentially compromise the security of the system. The command used is:
 
 chmod to 750 for the remove-threat.sh file is used to set the file permissions, allowing the owner (root) to read, write, and execute the script, while the group (root) can read and execute it, and others have no permissions. This permission setting ensures that only authorized users can access and execute the script, enhancing the security of the system. Aside from 750, there is also 755, which allows the owner to read, write, and execute the script, while the group and others can read and execute it.
+
+NEXT, STILL ON UBUNTU VM. I want to download MariaDB. BEcaue im using ubuntu server, instead of fedora as stated in the document. I must tweak a few thing. THese are the download steps:
+
+```
+sudo apt install mariadb-server mariadb-client galera-4
+sudo mariadb-secure-installation
+sudo systemctl status mariadb
+sudo mariadb -u root
+```
+
+Then after that, we can add the wazuh config to the mariadb (this is the part where its different from the docs):
+
+```
+sudo nano /etc/mysql/mariadb.conf.d/50-audit.cnf
+<copy paste the content of 50-audit.cnf from my directory>
+sudo systemctl restart mariadb
+sudo tail -f /var/log/syslog | grep mariadb-server_auditing (check if its working)
+```
+
+Wazuh has thousands of default rules. If there were no decoders, every time a single log arrived, the manager would have to run complex regex operations against every single rule to see if it matched. Your CPU would max out at 100% almost immediately, and log processing would grind to a halt. Without Decoders: You would have to write complex PCRE2 regex in your rule to account for the Windows format, the Linux format, the Cisco format, etc. You would need dozens of duplicate rules. With Decoders: The Windows decoder, the Linux decoder, and the Cisco decoder all translate their unique logs into the exact same variable: srcip. Now, you only have to write one single rule that says: "If srcip fails 5 times, trigger an alert." Ok after inserting the mariadb decoders and rules to the wazuh manager. BTW i used the GUI instead of manually inserting into /var/ossec/etc/rules and /var/ossec/etc/decoders.
+
+Now because that's already made, i can monitor multiple activities from MariaDB. Like authentication operations, data definition operations, data manipulation operations, data destruction operations, data access and query operations, account and privilege operations.
+
+1. The Headers = Tactics (The Attacker's Goal)
+   The big bold headers at the top (like Initial Access, Execution, Persistence) are called Tactics.
+
+Think of these as the attacker's high-level objectives. It answers the question: "What is the hacker trying to achieve at this exact moment?"
+
+For example, under Initial Access, the hacker's goal is simply to get a foot in the door of your network. Under Persistence, their goal is to make sure they don't lose access if a server reboots.
+
+2. The Cells Below = Techniques (The Attacker's Method)
+   The individual boxes underneath each header (like Drive-by Compromise, BITS Jobs, Command and Scripting Interpreter) are called Techniques.
+
+Think of these as the specific actions or methods the hacker uses to accomplish that top header goal. It answers the question: "How exactly is the hacker pulling this off?"
+
+For example, if the attacker's goal is Execution (running malicious code on your server), one technique they might use to do that is a BITS Jobs or a Command and Scripting Interpreter (like running a malicious PowerShell or Bash script).
+
+Where does the "Defense" come in?
+The Navigator starts completely grey because it only lists the hacker's playbook. The defense part is where you have to do it yourself (either manually or automatically). SO u color code it, like red for the techniques that you have detected, yellow for the techniques that you have partially detected, and green for the techniques that you have fully detected. This allows you to visualize your defensive coverage against the attacker's methods and identify areas where you may need to improve your security posture. By mapping your detections to the MITRE ATT&CK framework, you can better understand the tactics and techniques used by attackers and enhance your overall threat detection and response capabilities.
+
+One thing to note, is for example BITS Jobs is technique that comes under the tactic Execution, Persistence, and stealth. This means that if i color code BITS Jobs, then it will be colored in all 3 tactics. This is because the same technique can be used by attackers to achieve multiple objectives, and by mapping it to multiple tactics, I can gain a more comprehensive understanding of the attacker's methods and potential impact on my systems.
+
+SBOM can be generated for project web apps or mobile apps. SBOM stands for Software Bill of Materials, which is a comprehensive list of all the components, libraries, and dependencies used in a software application. It provides transparency into the software supply chain and helps organizations identify potential security vulnerabilities or licensing issues associated with the components used in their applications. By generating an SBOM, developers and security teams can better understand the composition of their software and take proactive measures to mitigate risks and ensure compliance with security standards and regulations.
+
+npm install --save-dev @cyclonedx/cyclonedx-npm
+
+--save-dev is used for development dependencies
+
+Now, command the tool to scan your project and spit out a JSON-formatted bill of materials:
+npx @cyclonedx/cyclonedx-npm --output-format JSON --output-file bom.json
+
+OR if using python, then:
+pip install cyclonedx-bom
+cyclonedx-py -o backend-bom.json
+
+example of bom is game-centr-frontend-bom.json. THis file is from a frontend of my project game centr.
+
+After that, the wazuh way is by uploading that SBOM to dependency track and using wazuh to generate the alerts. Dependency-Track is an open-source software composition analysis (SCA) platform that helps organizations identify and manage security vulnerabilities in their software dependencies. By uploading the SBOM to Dependency-Track, I can analyze the components used in my project and receive alerts for any known vulnerabilities or security issues associated with those components. Wazuh can then be configured to monitor the Dependency-Track platform and generate alerts based on the findings, allowing for proactive management of software security risks. This integration enhances the overall security posture of the application by providing visibility into potential threats and enabling timely remediation actions.
