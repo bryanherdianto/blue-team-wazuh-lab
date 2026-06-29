@@ -1,0 +1,15 @@
+timestamp,agent.name,rule.description,rule.level,rule.id
+"Jun 29, 2026 @ 21:45:30.113",ubuntu22-server,"Zeek: DNS Query self-signed.badssl.com attempted from source ip 172.20.10.2 source port 50170 resolved to IP(s) [""104.154.89.105""]",5,100901
+"Jun 29, 2026 @ 21:44:58.183",ubuntu22-server,"Zeek: DNS Query wazuh.com attempted from source ip 172.20.10.2 source port 48213 resolved to IP(s) [""65.9.180.6"",""65.9.180.27"",""65.9.180.65"",""65.9.180.29""]",5,100901
+"Jun 29, 2026 @ 21:44:36.137",ubuntu22-server,PAM: Login session closed.,3,5502
+"Jun 29, 2026 @ 21:44:28.663",ubuntu22-server,Wazuh agent started.,3,503
+"Jun 29, 2026 @ 21:44:26.047",ubuntu22-server,Wazuh agent stopped.,3,506
+"Jun 29, 2026 @ 21:42:23.899",ubuntu22-server,PAM: Login session closed.,3,5502
+"Jun 29, 2026 @ 21:42:23.899",ubuntu22-server,PAM: Login session opened.,3,5501
+"Jun 29, 2026 @ 21:42:23.707",ubuntu22-server,Successful sudo to ROOT executed.,3,5402
+"Jun 29, 2026 @ 21:41:03.789",ubuntu22-server,PAM: Login session closed.,3,5502
+"Jun 29, 2026 @ 21:41:03.789",ubuntu22-server,PAM: Login session opened.,3,5501
+"Jun 29, 2026 @ 21:41:03.619",ubuntu22-server,Successful sudo to ROOT executed.,3,5402
+"Jun 29, 2026 @ 21:39:49.907",ubuntu22-server,PAM: Login session opened.,3,5501
+"Jun 29, 2026 @ 21:39:49.907",ubuntu22-server,PAM: Login session closed.,3,5502
+"Jun 29, 2026 @ 21:39:49.547",ubuntu22-server,Successful sudo to ROOT executed.,3,5402

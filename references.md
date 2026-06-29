@@ -9,3 +9,4 @@ https://documentation.wazuh.com/current/proof-of-concept-guide/detect-remove-mal
 https://wazuh.com/blog/monitoring-mariadb-server-with-wazuh/
 https://mariadb.com/docs/server/mariadb-quickstart-guides/installing-mariadb-server-guide
 https://mitre-attack.github.io/attack-navigator/
+https://wazuh.com/blog/network-security-monitoring-with-wazuh-and-zeek/
