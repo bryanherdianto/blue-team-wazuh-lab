@@ -1,0 +1,8 @@
+timestamp,agent.name,rule.description,rule.level,rule.id
+"Jun 28, 2026 @ 00:07:42.267",ubuntu22-server,File deleted.,7,553
+"Jun 28, 2026 @ 00:07:39.759",ubuntu22-server,Integrity checksum changed.,7,550
+"Jun 27, 2026 @ 23:17:21.306",ubuntu22-server,File added to the system.,5,554
+"Jun 27, 2026 @ 23:17:21.306",ubuntu22-server,Integrity checksum changed.,7,550
+"Jun 27, 2026 @ 23:11:21.701",ubuntu22-server,Integrity checksum changed.,7,550
+"Jun 27, 2026 @ 22:37:56.205",ubuntu22-server,File added to the system.,5,554
+"Jun 27, 2026 @ 22:37:49.843",ubuntu22-server,File deleted.,7,553

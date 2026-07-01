@@ -1,0 +1,125 @@
+timestamp,agent.name,rule.description,rule.level,rule.id
+"Jun 29, 2026 @ 20:12:15.634",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 29, 2026 @ 20:12:15.634",ubuntu22-server,"""MariaDB audit -"" Successful data query: 'select count(*) into @discard from `mysql`.`procs_priv`'",3,100711
+"Jun 29, 2026 @ 20:12:15.622",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 29, 2026 @ 20:12:15.622",ubuntu22-server,"""MariaDB audit -"" Successful data query: 'select count(*) into @discard from `mysql`.`proc`'",3,100711
+"Jun 29, 2026 @ 20:12:15.622",ubuntu22-server,"""MariaDB audit -"" Successful authentication: root@localhost",3,100710
+"Jun 29, 2026 @ 20:12:15.531",ubuntu22-server,"""MariaDB audit -"" Successful authentication: root@localhost",3,100710
+"Jun 29, 2026 @ 20:12:14.423",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 29, 2026 @ 20:12:14.423",ubuntu22-server,"""MariaDB audit -"" Successful data query: 'select count(*) into @discard from `mysql`.`tables_priv`'",3,100711
+"Jun 29, 2026 @ 20:12:14.318",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 29, 2026 @ 20:12:14.318",ubuntu22-server,"""MariaDB audit -"" Successful authentication: root@localhost",3,100710
+"Jun 29, 2026 @ 20:12:14.253",ubuntu22-server,"""MariaDB audit -"" Successful authentication: root@localhost",3,100710
+"Jun 29, 2026 @ 20:12:14.252",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 29, 2026 @ 20:12:14.252",ubuntu22-server,"""MariaDB audit -"" Successful data query: 'select count(*) into @discard from `mysql`.`servers`'",3,100711
+"Jun 29, 2026 @ 20:12:14.193",ubuntu22-server,"""MariaDB audit -"" Successful authentication: root@localhost",3,100710
+"Jun 29, 2026 @ 20:12:14.193",ubuntu22-server,"""MariaDB audit -"" Successful data query: 'select count(*) into @discard from `mysql`.`roles_mapping`'",3,100711
+"Jun 29, 2026 @ 20:12:14.128",ubuntu22-server,"""MariaDB audit -"" Successful data query: 'select count(*) into @discard from `mysql`.`func`'",3,100711
+"Jun 29, 2026 @ 20:12:14.128",ubuntu22-server,"""MariaDB audit -"" Successful authentication: root@localhost",3,100710
+"Jun 29, 2026 @ 20:12:14.128",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 29, 2026 @ 20:12:14.076",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 29, 2026 @ 20:12:14.076",ubuntu22-server,"""MariaDB audit -"" Successful data query: 'select count(*) into @discard from `mysql`.`index_stats`'",3,100711
+"Jun 29, 2026 @ 20:12:14.034",ubuntu22-server,"""MariaDB audit -"" Successful data query: 'select count(*) into @discard from `mysql`.`columns_priv`'",3,100711
+"Jun 29, 2026 @ 20:12:14.034",ubuntu22-server,"""MariaDB audit -"" Successful authentication: root@localhost",3,100710
+"Jun 29, 2026 @ 20:12:14.034",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 29, 2026 @ 20:12:13.942",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 29, 2026 @ 20:12:13.942",ubuntu22-server,"""MariaDB audit -"" Successful data query: 'select count(*) into @discard from `mysql`.`help_relation`'",3,100711
+"Jun 29, 2026 @ 20:12:13.942",ubuntu22-server,"""MariaDB audit -"" Successful authentication: root@localhost",3,100710
+"Jun 29, 2026 @ 20:12:13.939",ubuntu22-server,"""MariaDB audit -"" Successful data query: 'select count(*) into @discard from `mysql`.`time_zone_transition`'",3,100711
+"Jun 29, 2026 @ 20:12:13.938",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 29, 2026 @ 20:12:13.938",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 29, 2026 @ 20:12:13.938",ubuntu22-server,"""MariaDB audit -"" Successful authentication: root@localhost",3,100710
+"Jun 29, 2026 @ 20:12:13.938",ubuntu22-server,"""MariaDB audit -"" Successful authentication: root@localhost",3,100710
+"Jun 29, 2026 @ 20:12:13.928",ubuntu22-server,"""MariaDB audit -"" Successful authentication: root@localhost",3,100710
+"Jun 29, 2026 @ 20:12:13.928",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 29, 2026 @ 20:12:13.928",ubuntu22-server,"""MariaDB audit -"" Successful data query: 'select count(*) into @discard from `mysql`.`time_zone_transition_type`'",3,100711
+"Jun 29, 2026 @ 20:12:13.928",ubuntu22-server,"""MariaDB audit -"" Successful data query: 'select count(*) into @discard from `mysql`.`time_zone_name`'",3,100711
+"Jun 29, 2026 @ 20:12:13.895",ubuntu22-server,"""MariaDB audit -"" Successful data query: 'select count(*) into @discard from `mysql`.`help_category`'",3,100711
+"Jun 29, 2026 @ 20:12:13.895",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 29, 2026 @ 20:12:13.895",ubuntu22-server,"""MariaDB audit -"" Successful authentication: root@localhost",3,100710
+"Jun 29, 2026 @ 20:12:13.895",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 29, 2026 @ 20:12:13.895",ubuntu22-server,"""MariaDB audit -"" Successful data query: 'select count(*) into @discard from `mysql`.`column_stats`'",3,100711
+"Jun 29, 2026 @ 20:12:13.895",ubuntu22-server,"""MariaDB audit -"" Successful authentication: root@localhost",3,100710
+"Jun 29, 2026 @ 20:12:13.869",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 29, 2026 @ 20:12:13.869",ubuntu22-server,"""MariaDB audit -"" Successful authentication: root@localhost",3,100710
+"Jun 29, 2026 @ 20:12:13.868",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 29, 2026 @ 20:12:13.868",ubuntu22-server,"""MariaDB audit -"" Successful authentication: root@localhost",3,100710
+"Jun 29, 2026 @ 20:12:13.868",ubuntu22-server,"""MariaDB audit -"" Successful data query: 'select count(*) into @discard from `mysql`.`help_keyword`'",3,100711
+"Jun 29, 2026 @ 20:12:13.828",ubuntu22-server,"""MariaDB audit -"" Successful authentication: root@localhost",3,100710
+"Jun 29, 2026 @ 20:12:13.828",ubuntu22-server,"""MariaDB audit -"" Successful data query: 'select count(*) into @discard from `mysql`.`time_zone`'",3,100711
+"Jun 29, 2026 @ 20:12:13.828",ubuntu22-server,"""MariaDB audit -"" Successful authentication: root@localhost",3,100710
+"Jun 29, 2026 @ 20:12:13.828",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 29, 2026 @ 20:12:13.828",ubuntu22-server,"""MariaDB audit -"" Successful data query: 'select count(*) into @discard from `mysql`.`help_topic`'",3,100711
+"Jun 29, 2026 @ 20:12:13.828",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 29, 2026 @ 20:12:13.807",ubuntu22-server,"""MariaDB audit -"" Successful authentication: root@localhost",3,100710
+"Jun 29, 2026 @ 20:12:13.807",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 29, 2026 @ 20:12:13.807",ubuntu22-server,"""MariaDB audit -"" Successful data query: 'select count(*) into @discard from `mysql`.`proxies_priv`'",3,100711
+"Jun 29, 2026 @ 20:12:13.768",ubuntu22-server,"""MariaDB audit -"" Successful data query: 'select count(*) into @discard from `mysql`.`event`'",3,100711
+"Jun 29, 2026 @ 20:12:13.768",ubuntu22-server,"""MariaDB audit -"" Successful authentication: root@localhost",3,100710
+"Jun 29, 2026 @ 20:12:13.768",ubuntu22-server,"""MariaDB audit -"" Successful authentication: root@localhost",3,100710
+"Jun 29, 2026 @ 20:12:13.768",ubuntu22-server,"""MariaDB audit -"" Successful data query: 'select count(*) into @discard from `mysql`.`time_zone_leap_second`'",3,100711
+"Jun 29, 2026 @ 20:12:13.768",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 29, 2026 @ 20:12:13.696",ubuntu22-server,"""MariaDB audit -"" Successful data query: 'select count(*) into @discard from `mysql`.`db`'",3,100711
+"Jun 29, 2026 @ 20:12:13.696",ubuntu22-server,"""MariaDB audit -"" Successful authentication: root@localhost",3,100710
+"Jun 29, 2026 @ 20:12:13.696",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 29, 2026 @ 20:12:13.696",ubuntu22-server,"""MariaDB audit -"" Successful data query: 'select count(*) into @discard from `mysql`.`table_stats`'",3,100711
+"Jun 29, 2026 @ 20:12:13.696",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 29, 2026 @ 20:12:13.656",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 29, 2026 @ 20:12:13.655",ubuntu22-server,"""MariaDB audit -"" Successful authentication: root@localhost",3,100710
+"Jun 29, 2026 @ 20:12:13.655",ubuntu22-server,"""MariaDB audit -"" Successful authentication: root@localhost",3,100710
+"Jun 29, 2026 @ 20:12:13.655",ubuntu22-server,"""MariaDB audit -"" Successful data query: 'select count(*) into @discard from `mysql`.`global_priv`'",3,100711
+"Jun 29, 2026 @ 20:12:13.646",ubuntu22-server,"""MariaDB audit -"" Successful authentication: root@localhost",3,100710
+"Jun 29, 2026 @ 20:12:13.646",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 29, 2026 @ 20:12:13.646",ubuntu22-server,"""MariaDB audit -"" Plugin operation detected: 'select count(*) into @discard from `mysql`.`plugin`'",7,100712
+"Jun 29, 2026 @ 20:12:13.573",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 29, 2026 @ 20:12:11.828",ubuntu22-server,"""MariaDB audit -"" Successful data query: 'select count(*) into @discard from `sys`.`sys_config`'",3,100711
+"Jun 29, 2026 @ 20:12:11.657",ubuntu22-server,"""MariaDB audit -"" Successful data query: 'select concat(\'select count(*) into @discard from `\',\n                    TABLE_SCHEMA, \'`.`\', TABLE_NAME, \'`\')\n      from information_schema.TABLES where TABLE_SCHEMA<>\'INFORMATION_SCHEMA\' and TABLE_SCHEMA<>\'PERFORMANCE_SCHEMA\' and ( ENGINE=\'MyISAM\' or ENGINE=\'Aria\' )'",3,100711
+"Jun 29, 2026 @ 20:12:11.657",ubuntu22-server,"""MariaDB audit -"" Successful authentication: root@localhost",3,100710
+"Jun 29, 2026 @ 20:12:11.657",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 28, 2026 @ 18:19:43.271",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 28, 2026 @ 17:49:34.429",ubuntu22-server,"""MariaDB audit -"" An operation returned error 1051: 'DROP TABLE non_existent_table'",3,100713
+"Jun 28, 2026 @ 17:49:30.857",ubuntu22-server,"""MariaDB audit -"" Successful account manipulation: 'DROP USER \'tester\'@\'localhost\''",7,100701
+"Jun 28, 2026 @ 17:49:24.071",ubuntu22-server,"""MariaDB audit -"" Successful account manipulation: 'CREATE USER \'tester\'@\'localhost\' IDENTIFIED BY *****'",7,100701
+"Jun 28, 2026 @ 17:49:19.246",ubuntu22-server,"""MariaDB audit -"" Successful data query: 'SHOW DATABASES'",3,100711
+"Jun 28, 2026 @ 17:49:13.609",ubuntu22-server,"""MariaDB audit -"" Successful deletion: 'DELETE FROM clients WHERE id = 1'",10,100702
+"Jun 28, 2026 @ 17:49:13.097",ubuntu22-server,"""MariaDB audit -"" Successful data manipulation operation: 'INSERT INTO clients (id, name, email) VALUES (2, \'Jane Doe\', \'jane@example.com\')'",5,100708
+"Jun 28, 2026 @ 17:49:12.685",ubuntu22-server,"""MariaDB audit -"" Successful data manipulation operation: 'INSERT INTO clients (id, name, email) VALUES (1, \'John Doe\', \'john@example.com\')'",5,100708
+"Jun 28, 2026 @ 17:48:54.726",ubuntu22-server,"""MariaDB audit -"" Successful schema/data modification: 'ALTER TABLE clients ADD email VARCHAR(255)'",7,100703
+"Jun 28, 2026 @ 17:48:46.518",ubuntu22-server,"""MariaDB audit -"" Successful data definition operation: 'RENAME TABLE users TO clients'",5,100706
+"Jun 28, 2026 @ 17:48:40.467",ubuntu22-server,"""MariaDB audit -"" Successful data definition operation: 'CREATE TABLE users (id INT, name VARCHAR(100))'",5,100707
+"Jun 28, 2026 @ 17:48:36.462",ubuntu22-server,"""MariaDB audit -"" Successful data query: 'show tables'",3,100711
+"Jun 28, 2026 @ 17:48:36.461",ubuntu22-server,"""MariaDB audit -"" Successful data query: 'show databases'",3,100711
+"Jun 28, 2026 @ 17:48:36.461",ubuntu22-server,"""MariaDB audit -"" Successful data query: 'SELECT DATABASE()'",3,100711
+"Jun 28, 2026 @ 17:48:28.545",ubuntu22-server,"""MariaDB audit -"" Successful data definition operation: 'CREATE DATABASE demo_db'",5,100707
+"Jun 28, 2026 @ 17:48:22.649",ubuntu22-server,"""MariaDB audit -"" Successful authentication: root@localhost",3,100710
+"Jun 28, 2026 @ 17:48:22.649",ubuntu22-server,"""MariaDB audit -"" Successful data query: 'select @@version_comment limit 1'",3,100711
+"Jun 28, 2026 @ 17:48:00.092",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 28, 2026 @ 17:47:58.347",ubuntu22-server,"""MariaDB audit -"" Successful data query: 'select @@version_comment limit 1'",3,100711
+"Jun 28, 2026 @ 17:47:58.347",ubuntu22-server,"""MariaDB audit -"" Successful authentication: root@localhost",3,100710
+"Jun 28, 2026 @ 17:47:48.566",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 28, 2026 @ 17:47:45.750",ubuntu22-server,"""MariaDB audit -"" Successful authentication: root@localhost",3,100710
+"Jun 28, 2026 @ 17:47:45.750",ubuntu22-server,"""MariaDB audit -"" Successful data query: 'select @@version_comment limit 1'",3,100711
+"Jun 28, 2026 @ 17:47:09.767",ubuntu22-server,"""MariaDB audit -"" Authentication failed: root@localhost",5,100704
+"Jun 28, 2026 @ 17:47:09.767",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 28, 2026 @ 17:47:07.844",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 28, 2026 @ 17:47:07.844",ubuntu22-server,"""MariaDB audit -"" Authentication failed: root@localhost",5,100704
+"Jun 28, 2026 @ 17:47:07.843",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 28, 2026 @ 17:47:07.677",ubuntu22-server,"""MariaDB audit -"" Authentication failed: root@localhost",5,100704
+"Jun 28, 2026 @ 17:47:07.677",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 28, 2026 @ 17:47:07.677",ubuntu22-server,"""MariaDB audit -"" Authentication failed: root@localhost",5,100704
+"Jun 28, 2026 @ 17:47:07.677",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 28, 2026 @ 17:47:07.677",ubuntu22-server,"""MariaDB audit -"" Possible brute force attack from root@localhost",7,100705
+"Jun 28, 2026 @ 17:47:05.846",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 28, 2026 @ 17:47:05.846",ubuntu22-server,"""MariaDB audit -"" Authentication failed: root@localhost",5,100704
+"Jun 28, 2026 @ 17:46:37.726",ubuntu22-server,"""MariaDB audit -"" Authentication failed: root@localhost",5,100704
+"Jun 28, 2026 @ 17:46:37.726",ubuntu22-server,"""MariaDB audit -"" User session closed: root@localhost",3,100709
+"Jun 28, 2026 @ 17:46:27.900",ubuntu22-server,"""MariaDB audit -"" User session closed: attacker@localhost",3,100709
+"Jun 28, 2026 @ 17:46:27.900",ubuntu22-server,"""MariaDB audit -"" Authentication failed: attacker@localhost",5,100704
+"Jun 28, 2026 @ 17:46:27.900",ubuntu22-server,"""MariaDB audit -"" User session closed: attacker@localhost",3,100709
+"Jun 28, 2026 @ 17:46:27.900",ubuntu22-server,"""MariaDB audit -"" Possible brute force attack from attacker@localhost",7,100705
+"Jun 28, 2026 @ 17:46:27.899",ubuntu22-server,"""MariaDB audit -"" User session closed: attacker@localhost",3,100709
+"Jun 28, 2026 @ 17:46:27.735",ubuntu22-server,"""MariaDB audit -"" Authentication failed: attacker@localhost",5,100704
+"Jun 28, 2026 @ 17:46:27.735",ubuntu22-server,"""MariaDB audit -"" User session closed: attacker@localhost",3,100709
+"Jun 28, 2026 @ 17:46:27.735",ubuntu22-server,"""MariaDB audit -"" User session closed: attacker@localhost",3,100709
+"Jun 28, 2026 @ 17:46:27.734",ubuntu22-server,"""MariaDB audit -"" Authentication failed: attacker@localhost",5,100704
+"Jun 28, 2026 @ 17:46:27.734",ubuntu22-server,"""MariaDB audit -"" Authentication failed: attacker@localhost",5,100704

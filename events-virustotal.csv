@@ -1,0 +1,6 @@
+timestamp,agent.name,rule.description,rule.level,rule.id
+"Jun 28, 2026 @ 00:07:43.288",ubuntu22-server,VirusTotal: Alert - /home/bryan/test_fim/eicar - 65 engines detected this file,12,87105
+"Jun 28, 2026 @ 00:07:41.584",ubuntu22-server,VirusTotal: Alert - /home/bryan/test_fim/eicar - 65 engines detected this file,12,87105
+"Jun 27, 2026 @ 23:17:23.642",ubuntu22-server,VirusTotal: Alert - /home/bryan/test_fim/eicar - No positives found,3,87104
+"Jun 27, 2026 @ 23:17:23.100",ubuntu22-server,VirusTotal: Alert - /home/bryan/test_fim/eicar - 64 engines detected this file,12,87105
+"Jun 27, 2026 @ 23:11:23.468",ubuntu22-server,VirusTotal: Alert - /home/bryan/test_fim/hello.txt - No positives found,3,87104

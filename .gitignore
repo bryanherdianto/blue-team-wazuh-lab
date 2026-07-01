@@ -1,0 +1,32 @@
+# Secrets & certs (never commit real keys)
+*.pem
+*.key
+*.crt
+*.csr
+*.p12
+.env*
+.env
+
+# Wazuh docker runtime data (volumes, logs, generated certs)
+wazuh-docker/**/volumes/
+wazuh-docker/**/logs/
+wazuh-docker/**/wazuh_indexer_ssl_certs/
+wazuh-docker/**/certs/
+
+# Nested git repos (prevents submodule confusion)
+**/.git/
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# API snapshots pulled from VPS (large, environment-specific)
+api-snapshots/
